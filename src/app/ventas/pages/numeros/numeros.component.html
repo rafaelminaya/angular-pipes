@@ -1,0 +1,35 @@
+<div class="text-layout">
+    <h1>DecimalPipe y Porcentaje</h1>
+
+    <p>Pipes incluídos en Angular - Usualmente en el Common Module</p>
+</div>
+
+<div class="grid">
+    <div class="col-4">
+        <!-- 
+            - '1.2-2' : El arguemtno se divide en 2 bloques separdo por el punto "." . 
+            A la izquierda la cantidad de enteros y a la derecha los decimales. 
+            Los decimales se redondean de forma automática.
+            - 1 : Indica que se mantiene la cantidad de enteros tal cual.
+            - 2-2 : Indicamos que la mínimca cantidad de decimales es "2" y seguido que la cantidad máxima de decimales es "2"
+
+         -->
+        <p-card header="Ventas Netas" subheader="del presente año"> <i class="pi pi-dollar"></i> {{ ventasNetas
+            |number: '1.2-2'}} </p-card>
+    </div>
+    <div class="col-4">
+
+        <!-- 'CAD' : Dólares canadienses . 
+            Indicamos la abreviación de la moneda. 
+            Si enviamos un valor no conocido, este se pondrá como si fuese una moneda-->
+        <p-card header="Ventas Netas" subheader="del presente año"> {{ ventasNetas
+            | currency:'CAD': 'symbol-narrow': '1.4-4'}} </p-card>
+    </div>
+    <div class="col-4">
+
+        <!-- 'CAD' : Dólares canadienses . 
+            Indicamos la abreviación de la moneda. 
+            Si enviamos un valor no conocido, este se pondrá como si fuese una moneda-->
+        <p-card header="Ganancia porcentual" subheader="del presente año"> {{porcentaje | percent:'2.2-2'}} </p-card>
+    </div>
+</div>
